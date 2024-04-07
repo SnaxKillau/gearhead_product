@@ -3,6 +3,8 @@ package ite.product.gearheadproduct.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Data
 @Entity
 @Table(name = "saleDetails")
@@ -20,4 +22,5 @@ public class SaleDetail {
     @ManyToOne
     @JoinColumn(name = "transformation_id")
     private Transformation transformation;
+//    private LocalDate createDate;
 }

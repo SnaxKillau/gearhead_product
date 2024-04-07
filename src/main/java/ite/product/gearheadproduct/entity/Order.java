@@ -5,14 +5,16 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+
 @Data
 @Entity
-@Table(name = "colors")
-public class Color {
+@Table(name = "orders")
+public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String description;
-    private String colorCode;
-    private LocalDate created;
+    private String name;
+    private String source;
+    private String imagePath;
+//    private LocalDate createDate;
 }

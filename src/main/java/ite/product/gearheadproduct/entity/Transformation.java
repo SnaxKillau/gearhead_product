@@ -3,6 +3,7 @@ package ite.product.gearheadproduct.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Data
@@ -43,11 +44,7 @@ public class Transformation {
     @ManyToOne
     @JoinColumn(name = "color_id")
     private Color color;
-
-
-
-
-
+//    private LocalDate createDate;
 
 
 

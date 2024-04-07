@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.LocalDate;
 
+
 @Data
 @Entity
 @Table(name = "transformationImportHistories")
@@ -19,4 +20,5 @@ public class TransformationImportHistory {
     @ManyToOne
     @JoinColumn(name = "transformations_id")
     private Transformation transformation;
+//    private LocalDate createDate;
 }

@@ -26,21 +26,23 @@ public class ColorServiceImpl implements ColorService {
     public Color updateColor(Long id ,Color color) {
         Color findColor = colorRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFound(id,"Color"));
+        findColor.setCreated(color.getCreated());
         findColor.setDescription(color.getDescription());
+        findColor.setColorCode(color.getColorCode());
         return colorRepository.save(findColor);
-    }
-    @Override
-    public String deleteColor(Long id) {
-        Color findColor = colorRepository.findById(id)
-                .orElseThrow(() -> new ResourceNotFound(id,"Color"));
-        colorRepository.delete(findColor);
-        String message = "Delete Successfully";
-        return message;
     }
     @Override
     public Color getColorById(Long id) {
         Color findColor = colorRepository.findById(id)
                 .orElseThrow(() -> new ResourceNotFound(id,"Color"));
         return findColor;
+    }
+
+    @Override
+    public String deleteColor(Long id) {
+        Color findColor = colorRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFound(id,"Color"));
+        colorRepository.delete(findColor);
+        return "Delete Successfully";
     }
 }
