@@ -8,9 +8,8 @@ public interface ColorService {
     public List<Color> getColor();
     public Color postColor(Color color);
     public Color updateColor(Long id, Color color);
+    public Color getColorById(Long id);
 
     public String deleteColor(Long id);
-
-    public Color getColorById(Long id);
 
 }

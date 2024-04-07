@@ -1,14 +1,23 @@
+#spring:
+#  datasource:
+#    url: jdbc:postgresql://localhost:5432/gearhead_product
+#    username: account
+#    password: account123
+#  jpa:
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        dialect: org.hibernate.dialect.PostgreSQLDialect
+#springdoc:
+#  api-docs:
+#    path: /api-docs
 spring:
-  datasource:
-    url: jdbc:postgresql://localhost:5432/gearhead_product
-    username: account
-    password: account123
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-springdoc:
-  api-docs:
-    path: /api-docs
+  application:
+    name: product
+  profiles:
+    active: dev
+  config:
+    import: optional:configserver:http://localhost:8071
+
+
