@@ -23,14 +23,13 @@ public class ConditionController {
         List<Condition> conditions = conditionService.getCondition();
         return ResponseEntity.ok(conditions);
     }
-
-    @PostMapping
+    @PostMapping("/admin")
     public ResponseEntity<Condition> post(@RequestBody Condition condition) {
         Condition postCondition = conditionService.postCondition(condition);
         return ResponseEntity.ok(postCondition);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {
         try {
             return ResponseEntity.ok(conditionService.deleteCondition(id));

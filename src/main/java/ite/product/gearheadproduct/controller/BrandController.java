@@ -43,7 +43,7 @@ public class BrandController {
         Brand brand = brandService.getBrandById(id);
         return ResponseEntity.ok(brand);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
         try {
             return ResponseEntity.ok(brandService.deleteBrand(id));
@@ -57,7 +57,7 @@ public class BrandController {
         }
 
     }
-    @PostMapping
+    @PostMapping("/admin")
     public ResponseEntity<Brand> uploadImage(@RequestParam String description,
                                              @RequestParam LocalDate created,
                                              @RequestPart("file") MultipartFile file) throws IOException {
@@ -74,7 +74,7 @@ public class BrandController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(postingBrand);
     }
-    @PatchMapping("/{id}")
+    @PatchMapping("/admin/{id}")
     public ResponseEntity<Brand> update(@PathVariable Long id ,
                                         @RequestParam String description,
                                         @RequestParam LocalDate created,

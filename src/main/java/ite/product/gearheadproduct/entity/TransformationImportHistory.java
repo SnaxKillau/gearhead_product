@@ -13,7 +13,7 @@ public class TransformationImportHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate dataImport;
+    private LocalDate dateImport;
     private Integer importUnit;
     private Integer pricePerUnit;
 

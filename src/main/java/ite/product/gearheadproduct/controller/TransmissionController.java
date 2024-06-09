@@ -22,13 +22,13 @@ public class TransmissionController {
         List<Transmission> transmission = transmissionService.getTransmission();
         return ResponseEntity.ok(transmission);
     }
-    @PostMapping
+    @PostMapping("/admin")
     public  ResponseEntity<Transmission> post(@RequestBody Transmission transmission) {
         Transmission postingTransmission = transmissionService.postTransmission(transmission);
         return ResponseEntity.ok(postingTransmission);
     }
 
-    @DeleteMapping("{id}")
+    @DeleteMapping("/admin/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id) {
         try {
             return ResponseEntity.ok(transmissionService.deleteTransmission(id));

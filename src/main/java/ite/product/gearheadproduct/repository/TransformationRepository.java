@@ -5,6 +5,8 @@ import ite.product.gearheadproduct.entity.Transformation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 import java.util.Objects;
@@ -25,7 +27,11 @@ public interface TransformationRepository extends JpaRepository<Transformation, 
             nativeQuery = true)
     List<TransformationDetailDTO> getTransformationsWithDetails();
 
+    @Query(value = "SELECT id, acceleration, available_unit, co2, descriptions, model, mpg, power, price, top_speed, year, brand_id, color_id, condition_id, transmission_id\n" +
+    " FROM public.transformations \n "+
+    "WHERE price < 20000" ,nativeQuery = true)
+    List<Transformation> getTransformationPrice();
 
-
+    Page<Transformation> findByBrandDescription(String brandDescription , Pageable pageable);
 
 }

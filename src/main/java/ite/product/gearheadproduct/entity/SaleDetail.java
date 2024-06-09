@@ -14,7 +14,7 @@ public class SaleDetail {
     private Long id;
     private Integer unit;
     private Integer amount;
-
+    private String userId;
     @ManyToOne
     @JoinColumn(name = "sale_id")
     private Sale sale;

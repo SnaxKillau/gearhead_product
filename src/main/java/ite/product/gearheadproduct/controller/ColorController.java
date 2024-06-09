@@ -27,17 +27,17 @@ public class ColorController {
         Color colorById = colorService.getColorById(id);
         return ResponseEntity.ok(colorById);
     }
-    @PostMapping
+    @PostMapping("/admin")
     public ResponseEntity<Color> post(@RequestBody Color color){
         Color postingColor = colorService.postColor(color);
         return ResponseEntity.ok(postingColor);
     }
-    @PatchMapping("/{id}")
+    @PatchMapping("/admin/{id}")
     public ResponseEntity<Color> update(@PathVariable Long id , @RequestBody Color color){
         Color updateColor = colorService.updateColor(id, color);
         return ResponseEntity.ok(updateColor);
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/admin/{id}")
     public ResponseEntity<String> delete(@PathVariable Long id){
         try {
             return ResponseEntity.ok(colorService.deleteColor(id));
