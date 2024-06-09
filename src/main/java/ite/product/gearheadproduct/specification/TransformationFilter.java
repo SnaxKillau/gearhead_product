@@ -8,5 +8,4 @@ public class TransformationFilter {
     private String brand;
     private Integer minPrice;
     private Integer maxPrice;
-    private String type;
 }

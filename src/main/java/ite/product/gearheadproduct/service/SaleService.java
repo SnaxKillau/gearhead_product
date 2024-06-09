@@ -11,7 +11,7 @@ import java.util.Map;
 
 
 public interface SaleService {
-    public void sale(SaleDTO dto);
+    public String sale(SaleDTO dto);
 
     public List<SaleDetail> get();
     public List<ReportTransformationsDTO> report(LocalDate startDate , LocalDate endDate);

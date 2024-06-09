@@ -28,9 +28,8 @@ public class SaleController {
 
     @PostMapping
     private ResponseEntity<String> post(@RequestBody SaleDTO dto){
-        saleService.sale(dto);
-        String message = "Successfully";
-        return ResponseEntity.ok(message);
+        String id = saleService.sale(dto);
+        return ResponseEntity.ok(id);
     }
 
     @GetMapping("/{startDate}/{endDate}")
